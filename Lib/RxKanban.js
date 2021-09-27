@@ -3,37 +3,37 @@ class DomHelper {
     eventMapper = []
     dataMapper = []
     createNewElement(element, onlyString = false) {
-        const me = this;
-        if (element && element.visible === false) return "";
-        if (!element || !element.tag) return (onlyString ? `<div></div>` : rxjq(`<div></div>`));
-        if (!element.id) element.id = this.ID;
-        if (element.listners) {
-            let ev = this.eventMapper.filter(e => e.id == element.id);
-            if (ev && ev.length > 0) {
-                ev.listners = element.listners;
-            } else {
-                ev = {
-                    id: element.id,
-                    listners: element.listners
+            const me = this;
+            if (element && element.visible === false) return "";
+            if (!element || !element.tag) return (onlyString ? `<div></div>` : rxjq(`<div></div>`));
+            if (!element.id) element.id = this.ID;
+            if (element.listners) {
+                let ev = this.eventMapper.filter(e => e.id == element.id);
+                if (ev && ev.length > 0) {
+                    ev.listners = element.listners;
+                } else {
+                    ev = {
+                        id: element.id,
+                        listners: element.listners
+                    }
                 }
+                this.eventMapper.push(ev);
             }
-            this.eventMapper.push(ev);
-        }
-        if (element.data) {
-            let elData = this.dataMapper.filter(e => e.id == element.id);
-            if (elData && elData.length > 0) {
-                elData.data = element.data;
-            } else {
-                elData = {
-                    id: element.id,
-                    data: element.data
+            if (element.data) {
+                let elData = this.dataMapper.filter(e => e.id == element.id);
+                if (elData && elData.length > 0) {
+                    elData.data = element.data;
+                } else {
+                    elData = {
+                        id: element.id,
+                        data: element.data
+                    }
                 }
+                this.dataMapper.push(elData)
             }
-            this.dataMapper.push(elData)
-        }
-        let attrs = Object.keys(element);
-        
-        let elStr = `<${element.tag} ${attrs.map(a => {
+            let attrs = Object.keys(element);
+
+            let elStr = `<${element.tag} ${attrs.map(a => {
             if (
                 typeof (element[a]) != "object"
                 && (
@@ -560,8 +560,8 @@ class RxKanban {
             scrollSpeed: 80,
             scrollSensitivity:80,
             helper: (event, ui) => {
-                let clone = $(ui).clone();
-                $('.rx-kbn-container.ui-sortable').append(clone);
+                let clone = rxjq(ui).clone();
+                rxjq('.rx-kbn-container.ui-sortable').append(clone);
                 clone.hide();
                 setTimeout(function () {
                     clone.appendTo('body');
@@ -636,8 +636,8 @@ class RxKanban {
                 },
                 stop: (event, ui) => {
                     let lanes = [];
-                    $("div[id*='kbn-lane-root-']").map(function () {
-                        lanes.push($(this).attr('laneid'));
+                    rxjq("div[id*='kbn-lane-root-']").map(function () {
+                        lanes.push(rxjq(this).attr('laneid'));
                     });
                     if (me._config.onLaneOrderChange && typeof me._config.onLaneOrderChange == "function") {
                         me._config.onLaneOrderChange(lanes)

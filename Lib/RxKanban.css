@@ -72,7 +72,8 @@ body {
 .kbn-cards {
     padding: 14px;
     min-height: 50%;
-    height: 100%; /*Add by Nandlal 03-07-2021*/
+    height: 100%;
+    /*Add by Nandlal 03-07-2021*/
 }
 
 .card-body-scroll {
@@ -89,7 +90,7 @@ body {
     display: inline-block;
     overflow: hidden;
     box-sizing: border-box;
-    margin-left:3px;
+    margin-left: 3px;
 }
 
 .kbn-card-wrapper:hover:not(.kbn-readonly) {
@@ -115,14 +116,14 @@ body {
     height: 28px;
     margin-right: 3px;
     border-radius: 50px;
-    margin-top: 20px; /*Update By nandlal 06-07-2021*/
+    margin-top: 20px;
 }
 
 .kbn-user-image:hover {
     transform: scale(1.1);
 }
 
-.kbn-start-rating {/*Update by Nandlal 13-07-2021*/
+.kbn-start-rating {
     width: fit-content;
     min-width: 42px;
     color: white;
@@ -162,16 +163,19 @@ span.kbn-value {
 .img-collapse-btn {
     height: 16px;
     cursor: pointer;
-    content: url(../../../image/newico/right-arrow-new.png);
-    transform: rotate( 180deg );
+    content: url(./Resources/gray-right.png);
+    transform: rotate( 180deg);
     margin-top: 3px;
-} /*Update for menuitem Modification on 06-08-2021*/
+}
+
+
+/*Update for menuitem Modification on 06-08-2021*/
 
 .img-expand-btn {
     height: 16px;
     cursor: pointer;
     margin: 9px 0;
-    content: url(../../../image/newico/right-arrow-new.png);
+    content: url(./Resources/gray-left.png);
 }
 
 
@@ -180,7 +184,7 @@ Mask Css
 **/
 
 .kbn-loading-mask-backdrop {
-    display:none;
+    display: none;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -308,7 +312,8 @@ Mask Css
 
 .kbn-tooltip {
     position: relative;
-    margin: 25px 10px 0; /*Added For UI Modification on 26-08-2021*/
+    margin: 25px 10px 0;
+    /*Added For UI Modification on 26-08-2021*/
 }
 
 .kbn-tooltip[datatitle]:hover:after {
@@ -329,6 +334,7 @@ Mask Css
     font-family: 'sf-pro-text-regular';
     font-weight: 400;
 }
+
 .kbn-tooltip:hover:before {
     border: solid;
     border-color: transparent #5c5b5d;
@@ -342,25 +348,33 @@ Mask Css
     border-width: .5em .5em .5em .0em;
     display: block;
 }
+
 .kbn-tooltip.lt {
     float: right;
 }
+
 .kbn-tooltip.lt:hover:before {
     left: unset;
-    right: 20px; /*Update For UI Modification on 26-08-2021*/
+    right: 20px;
+    /*Update For UI Modification on 26-08-2021*/
     bottom: 6px;
     border-width: .5em .0em .5em .5em;
 }
+
 .kbn-tooltip.lt[datatitle]:hover:after {
-    right: 21px;/*Update For UI Modification on 26-08-2021*/
+    right: 21px;
+    /*Update For UI Modification on 26-08-2021*/
     bottom: -3px;
     left: unset;
 }
 
-.kbn-footer input{
+.kbn-footer input {
     position: relative;
 }
+
+
 /*Update By nandlal 06-07-2021*/
+
 .kbn-footer input[type=checkbox] {
     cursor: pointer;
     /*width: 28px;*/
@@ -371,24 +385,26 @@ Mask Css
     border-radius: 16px;
     margin-top: 25px;
 }
+
 .kbn-footer input[type=checkbox]::before {
     content: " ";
     position: absolute;
-        width: 32px;
+    width: 32px;
     background: #BFBFBF;
     height: 16px !important;
-        color: #ffffff;
-        font-size: 8px;
-        line-height: 16px;
-        font-family: 'SF Pro Text Bold';
-        padding-right: 4px;
-        text-align: right;
-        background-size: 8px;
-        background-image: url(../../../image/close-white.png);
-        background-repeat: no-repeat;
-        background-position: 80%;
-        cursor: pointer;
+    color: #ffffff;
+    font-size: 8px;
+    line-height: 16px;
+    font-family: 'SF Pro Text Bold';
+    padding-right: 4px;
+    text-align: right;
+    background-size: 8px;
+    background-image: url(../../../image/close-white.png);
+    background-repeat: no-repeat;
+    background-position: 80%;
+    cursor: pointer;
 }
+
 .kbn-footer input[type=checkbox]::after {
     content: "";
     position: absolute;
@@ -399,6 +415,7 @@ Mask Css
     top: calc(50% - 10px/2);
     box-shadow: 0px 2px 4px rgb(0 35 11 / 20%);
 }
+
 .kbn-footer input[type=checkbox]:checked::before {
     background-color: #4081c5;
     content: " ";
@@ -417,15 +434,18 @@ Mask Css
     background-repeat: no-repeat;
     background-position: 20%;
 }
+
 .kbn-footer input[type=checkbox]:checked::after {
     right: 4px;
 }
 
 
 /*Add By Nandlal 05-07-2021*/
-.kbn-footer{
+
+.kbn-footer {
     position: relative;
 }
+
 .kbn-footer:after {
     content: '';
     width: 100%;
@@ -436,7 +456,9 @@ Mask Css
     bottom: 38px;
 }
 
+
 /*Add By Nandlal 13-07-2021*/
+
 ::-webkit-scrollbar {
     width: 10px !important;
     height: 10px !important;
